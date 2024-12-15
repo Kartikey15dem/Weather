@@ -47,11 +47,11 @@ class MainActivity : ComponentActivity() {
                 arrayOf(Manifest.permission.ACCESS_FINE_LOCATION),
                 LOCATION_PERMISSION_REQUEST_CODE)
 
-        } else {}
+        } else {
             isNetwork = isNetworkAvailable(this)
 
             lifecycleScope.launch {
-                 coordinates = getCoordinates(this@MainActivity)!!
+                coordinates = getCoordinates(this@MainActivity)!!
                 coordinates.let {
                     setContent {
                         WeatherTheme {
@@ -60,6 +60,7 @@ class MainActivity : ComponentActivity() {
                     }
                 }
 
+            }
         }
 
 
